@@ -9,14 +9,17 @@ import androidx.room.Update
 @Dao
 interface UserDao {
     @Insert
-    fun insertAll(vararg users: User)
+    fun insertUser(users: User)
 
     @Update
-    fun updateUser(vararg users: User)
+    fun updateUser(users: User)
 
     @Delete
-    fun delete(user: User)
+    fun deleteUser(user: User)
 
-    @Query("SELECT * FROM user")
-    fun getAll(): List<User>
+    @Query("SELECT * FROM users")
+    fun getAllUser(): List<User>
+
+    @Insert
+    fun insertTask(task: Task)
 }
